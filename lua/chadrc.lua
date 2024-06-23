@@ -5,16 +5,12 @@
 local M = {}
 
 M.ui = {
-    theme = "jellybeans",
+  theme = "jellybeans",
   hl_override = {
     ColorColumn = {
       bg = "lightbg",
     },
   },
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
 }
 
 return M

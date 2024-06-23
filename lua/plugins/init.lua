@@ -1,7 +1,33 @@
 return {
   {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = { enable = true },
+    },
+  },
+  {
+    "NvChad/nvterm",
+    opts = {
+      terminals = {
+        type_opts = {
+          horizontal = { location = "rightbelow", split_ratio = 0.3 },
+        },
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      require("dapui").setup()
+    end,
+  },
+  {
     "stevearc/conform.nvim",
-    event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     config = function()
       require "configs.conform"
     end,
@@ -14,14 +40,14 @@ return {
     end,
   },
   {
-    'mrcjkb/rustaceanvim',
-    version = '^4', -- Recommended
-    lazy = false,   -- This plugin is already lazy
+    "mrcjkb/rustaceanvim",
+    version = "^4", -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
   {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.8",
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
     "kyazdani42/nvim-tree.lua",
@@ -30,7 +56,7 @@ return {
       require("nvim-tree").setup {
         -- Your preferred nvim-tree setup options
         view = {
-          width = 30,
+          width = 25,
           side = "left",
         },
         filters = {
@@ -82,8 +108,12 @@ return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
-      "vim", "lua", "vimdoc", "rust",
-      "html", "css"
+      "vim",
+      "lua",
+      "vimdoc",
+      "rust",
+      "html",
+      "css",
     },
   },
 }
